@@ -74,12 +74,8 @@ class _InfinteListState extends State<InfinteList> {
                       itemCount: user.length,
                       physics: NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) {
-                        return Card(
-                          margin: EdgeInsets.all(8),
-                          child: Container(
-                            padding: EdgeInsets.all(12),
-                            child: Text(user[index].title),
-                          ),
+                        return ListTile(
+                          title: Text('${user[index].title}'),
                         );
                       },
                     ),
