@@ -1,4 +1,5 @@
 import 'package:case_devindo/bloc/infintelist_bloc.dart';
+import 'package:case_devindo/detail_infinte_list.dart';
 import 'package:case_devindo/model/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -75,6 +76,16 @@ class _InfinteListState extends State<InfinteList> {
                       physics: NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) {
                         return ListTile(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DetailInfiniteList(
+                                  user: user[index],
+                                ),
+                              ),
+                            );
+                          },
                           title: Text('${user[index].title}'),
                         );
                       },
